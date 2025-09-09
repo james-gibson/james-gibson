@@ -7,7 +7,7 @@
 
 
 - `local-time-system`
-  | a comprehensive TypeScript library for managing temporal universes, cross-universe references, and temporal relationships. It provides a sophisticated framework for tracking time across fictional and real works, with support for zero-reference addressing, temporal paradoxes, and complex reference chains
+  | (wip) a comprehensive TypeScript library for managing temporal universes, cross-universe references, and temporal relationships. It provides a sophisticated framework for tracking time across fictional and real works, with support for zero-reference addressing, temporal paradoxes, and complex reference chains
 
 <details>
     
@@ -86,6 +86,16 @@ const maryPoppins = registry.getUniverse('disney:mary_poppins:1964');
   - Combining HTTP status code 402 with 418 to create a intra-microservice based payment system middleware themed around cups of tea as units of measure 
 
 ## Things James has done:
+
+- 
+- Designed and led multiple technical code migrations with zero unscheduled hours of developer downtime
+- Stabilized core website delivery pipelines for multiple FortuneX companies
+  - I've battled with google bot and k8s, both in winning and losing
+  - Unrecursed 1.3m npm modules while maintaining production shipping ability
+  - Generalized statement: 7 minutes to build, lint, and test. 7 minutes to ship
+    - Its not always possible but the intention adds up to hundreds of saved developer hours
+- Supported active design system impimentation and automation
+  - Created scripts that calculated if downstream repos were falling out of design compliance (mandated by a11y legal requirements)
 - Inherited eleven mongodb instances and developed solution to collapse them into a single database instance / api
   - The system used the OpLog for its Meteor.js integration, due to the number of active clients they had scaled it horizontally first
   - 
