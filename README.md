@@ -8,6 +8,52 @@
 
 - `local-time-system`
   | a comprehensive TypeScript library for managing temporal universes, cross-universe references, and temporal relationships. It provides a sophisticated framework for tracking time across fictional and real works, with support for zero-reference addressing, temporal paradoxes, and complex reference chains
+
+<details>
+    
+```typescript
+import { UniverseBuilder } from '@local-time/temporal-system';
+
+const universe = new UniverseBuilder()
+  .film('disney', 'mary_poppins', 1964)
+  .withRuntime(139) // minutes
+  .withRealityRelation('pure_fiction', 1.0)
+  .withCopyright(['Walt Disney Productions'], 1964, 'active')
+  .withCulturalSignificance(0.98)
+  .addRuntimeKeyframe(87, 15, 'umbrella_descent', 0.95, ['iconic', 'magical'])
+  .build();
+```
+
+### Creating a Historical Event Universe
+
+```typescript
+const universe = new UniverseBuilder()
+  .historicalEvent('jfk_assassination', 1963)
+  .withDateRange(1963, 11, 22, 1963, 11, 22, TimePrecision.SECOND)
+  .withRealityRelation('documentary', 0.0)
+  .withPublicDomain(['Warren Commission Report'])
+  .addDateKeyframe(1963, 11, 22, 12, 30, 0, 'first_shot', 1.0, ['assassination'])
+  .build();
+```
+
+### Querying Universes
+
+```typescript
+import { LocalTime } from '@local-time/temporal-system';
+
+const localTime = new LocalTime();
+await localTime.initialize();
+
+// Find universes in 1964
+const windowSearch = localTime.getWindowSearch();
+const universes = await windowSearch.findUniversesInWindow('cal:1964');
+
+// Get specific universe
+const registry = localTime.getRegistry();
+const maryPoppins = registry.getUniverse('disney:mary_poppins:1964');
+```
+</details>
+
 - (mcp)
 - Project, Art?
   - 
