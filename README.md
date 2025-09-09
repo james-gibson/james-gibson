@@ -64,8 +64,15 @@ const maryPoppins = registry.getUniverse('disney:mary_poppins:1964');
 - Converting his homelab onto low voltage hardware to maximize utilization of local solar production
 - Created reverse proxies for my applications to minimize puncturing my home firewall and to centralize TLS management
 - My homelab supports multiple federated react apps backed by a shared node.js api
+<details>
+  
+  - My car uses those api's to write diagnostic report for me
+      <img width="553" height="1057" alt="image" src="https://github.com/user-attachments/assets/a9dd2121-141c-44ad-b030-804ade7a95f4" />
+
   - While exploring CQRS patterns I load tested the system by live rendering random markdown content from my web-hook security updates table, achieving 300 - 1k req/s
   - <img width="1705" height="628" alt="image" src="https://github.com/user-attachments/assets/66cff645-a456-49dc-bee5-6b6921c61992" />
+</details>
+
 - I use the lab to explore things like
   - Personal Github application posts web-hook security updates that I convert into test content for my markdown exploration
   - `Project, Art?` started as an exploration in rendering MDX into JSX securely using nonce or sha CSPs)
@@ -77,8 +84,6 @@ const maryPoppins = registry.getUniverse('disney:mary_poppins:1964');
   - Custom application protocols and advanced data management via service workers
   - OAuth 2.0 Dynamic Client Registration (RFC 7591) to support QR-code addressed view adoption, complete with privacy focused 
   - Combining HTTP status code 402 with 418 to create a intra-microservice based payment system middleware themed around cups of tea as units of measure 
-- My car uses those api's to write diagnostic report for me
-  - <img width="553" height="1057" alt="image" src="https://github.com/user-attachments/assets/a9dd2121-141c-44ad-b030-804ade7a95f4" />
 
 ## Things James has done:
 - Inherited eleven mongodb instances and developed solution to collapse them into a single database instance / api
