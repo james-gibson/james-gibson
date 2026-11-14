@@ -1,207 +1,151 @@
-> James is looking for work that doesn't feel like work.
+# James Gibson
 
-**🕸️ [jamesgibson.co](https://jamesgibson.co)** · **🐙 [github.com/james-gibson](https://github.com/james-gibson)** · **🌱 [le.gume](https://james-gibson.github.io/le.gume/)**
+**I make claims checkable.**
 
-<p align="center">
-  <a href="https://github.com/james-gibson/le.gume"><img alt="le.gume stars" src="https://shieldcn.dev/github/stars/james-gibson/le.gume.svg?variant=secondary&size=sm" /></a>
-  <a href="https://github.com/james-gibson/local-time"><img alt="local-time stars" src="https://shieldcn.dev/github/stars/james-gibson/local-time.svg?variant=secondary&size=sm" /></a>
-  <a href="https://github.com/james-gibson/le.gume/blob/main/LICENSE"><img alt="AGPL-3.0" src="https://shieldcn.dev/github/license/james-gibson/le.gume.svg?variant=secondary&size=sm" /></a>
-  <a href="https://github.com/james-gibson/le.gume"><img alt="le.gume last commit" src="https://shieldcn.dev/github/last-commit/james-gibson/le.gume.svg?variant=secondary&size=sm" /></a>
-  <a href="https://github.com/james-gibson/lab-safety"><img alt="lab-safety last commit" src="https://shieldcn.dev/github/last-commit/james-gibson/lab-safety.svg?variant=secondary&size=sm" /></a>
-</p>
+Every system I have observed appears as if it fails the same way: one part goes missing, the
+output stays plausible, and nobody notices. Energy reporting, deployment
+pipelines, brokerage accounting, compliance limits, agent-facing services.
+More than a decade, one failure shape.
 
----
-
-## What James is building
-
-### le.gume — the self-documenting documentation site
-
-[le.gume](https://james-gibson.github.io/le.gume/) is a documentation site that is its own
-starter kit: plain Markdown plus flat frontmatter, navigation derived from the file tree (so it
-cannot drift), a publish guard that fails the build loudly instead of shipping stale docs, and a
-generated `llms.txt` so an agent can take the site and go. It is promotional, educational, and an
-open-knowledge starter at once — and it documents the rules it follows. Source:
-[james-gibson/le.gume](https://github.com/james-gibson/le.gume).
-
-The site is organised into **seeds** — each one a body of knowledge with an audience, an
-assumption, and an entrance, arranged on a readiness scale rather than a seniority scale.
-
-#### The seeds
-
-| Seed | Readiness | Written for | Start here |
-| --- | --- | --- | --- |
-| [No script](https://james-gibson.github.io/le.gume/seeds/no-script/) | −3 · No script | Someone who wants the words, JavaScript off on purpose | [The page, script removed](https://james-gibson.github.io/le.gume/nojs/) |
-| [No stylesheet](https://james-gibson.github.io/le.gume/seeds/no-stylesheet/) | −2 · No stylesheet | Someone who wants to read without the page's opinions | [The bare page](https://james-gibson.github.io/le.gume/bare/) |
-| [It's just a file](https://james-gibson.github.io/le.gume/seeds/just-a-file/) | −1 · Just a file | Someone who wants the source, not a presentation of it | [The file](https://james-gibson.github.io/le.gume/seeds/just-a-file/) |
-| [The commercial case](https://james-gibson.github.io/le.gume/seeds/pitch/) | 0 · Just a website | Whoever approves the time or the invoice | [Why le.gume](https://james-gibson.github.io/le.gume/pitch/why-legume/) |
-| [The twelve factors](https://james-gibson.github.io/le.gume/seeds/twelve-factors/) | 1 · Understand | Someone who has never deployed software | [Start here](https://james-gibson.github.io/le.gume/factors/start-here/) |
-| [Scenario as contract](https://james-gibson.github.io/le.gume/seeds/scenario-as-contract/) | 1 · Understand | Someone with a design doc, a schema, and no definition of done | [From design doc to scenarios](https://james-gibson.github.io/le.gume/guides/from-design-doc-to-scenarios/) |
-| [The starter](https://james-gibson.github.io/le.gume/seeds/starter/) | 2 · Learn | An engineer who needs docs they can still run in two years | [Quickstart](https://james-gibson.github.io/le.gume/docs/quickstart/) |
-| [Agent operations](https://james-gibson.github.io/le.gume/seeds/agent-operations/) | 3 · Operate | An LLM agent, or whoever points one at a repo | [Docs for agents](https://james-gibson.github.io/le.gume/docs/for-agents/) |
-| [Isotopes](https://james-gibson.github.io/le.gume/seeds/isotopes/) | 4 · Package | Anyone who keeps re-explaining a setup | [What an isotope is](https://james-gibson.github.io/le.gume/isotopes/what-is-an-isotope/) |
-| [The voice](https://james-gibson.github.io/le.gume/seeds/voice/) | Register · lateral | Writers and editors on technical material | [The hard parts](https://james-gibson.github.io/le.gume/writing/the-hard-parts/) |
-
-### lab-safety — the policy layer for the prototype lab
-
-[lab-safety](https://github.com/james-gibson/lab-safety) is the guardrail layer for a local-first
-Go lab: a cluster of tools — `lezz.go`, `smoke-alarm`, `adhd`, `tuner`, `isotope`,
-`fire-marshall` — that discover each other over mDNS and verify trust before acting.
-
-The question it answers is **trust after connection**: a caller can connect to an MCP service, and
-whether it should be trusted after that is a separate question most transport specs never answer.
-lab-safety measures a caller's **42i distance** from nominal and maps it to a capability rung that
-limits what it may read.
-
-Its policy object is written down before its checks: one **16-section safety data sheet per MCP
-surface**, laid out as Gherkin under [`sheets/`](https://github.com/james-gibson/lab-safety/tree/main/sheets).
-A surface is not permissible until it is declared — and a surface that does not match its own
-documentation is a failing test rather than a stale sentence.
-
-### Documentation that derives itself
-
-Across le.gume, the lab, and the open-knowledge vault, the recurring bet is the same:
-**documentation should be a derived artefact, not a promise someone has to remember to keep.**
-
-Simulations and research projects land as plain Markdown with flat frontmatter; navigation,
-indexes, `llms.txt`, and cross-references are generated from the tree; a publish guard refuses to
-ship anything that has drifted. A source file is the record, and the presentation is derived from
-it — never typed twice.
-
-- [local-time](https://github.com/james-gibson/local-time) — a TypeScript library that models
-  temporal universes (films, historical events, simulations, books, biographies, legal timelines)
-  with zero-reference addressing and cross-universe references, so a fictional world and a research
-  timeline live in the same queryable model.
-- [le.gume](https://james-gibson.github.io/le.gume/docs/for-agents/) — the engine: plain-text
-  source, derived navigation, generated `llms.txt`, and a publish guard as the gate.
-- [The open-knowledge vault](https://github.com/james-gibson/kb) — the corpus, indexed for search
-  rather than left as loose notes.
+Self-taught, community-raised. I care about four things and I can show my work
+on all four: **user ease, software correctness, client joy, and environmental
+sustainability.**
 
 ---
 
-## What James is up to lately
+## Disciplines
 
-- `local-time-system` — (wip) a TypeScript library for managing temporal universes,
-  cross-universe references, and temporal relationships. It tracks time across fictional and real
-  works, with support for zero-reference addressing, temporal paradoxes, and complex reference
-  chains.
+No project attached to these. This is simply what I have done, repeatedly, for
+a long time.
 
-<details>
+**Legacy rescue.** Six-thousand-line bootstrap files, a non-cascading stylesheet
+retrofitted into a large Flex application, twelve production databases
+collapsed into one. I take the thing nobody wants to touch and I do not break
+it.
 
-```typescript
-import { UniverseBuilder } from '@local-time/temporal-system';
+**Version control and provenance.** Moved teams from SVN to Git, and years
+later ran source-of-truth-in-git deployments for a packaged application across
+customer orgs — committed metadata, scripted deploy, and a fixture repo whose
+only job was to test the build step itself. That was early 2016. The platform
+announced the same idea as its own product that August.
 
-const universe = new UniverseBuilder()
-  .film('disney', 'mary_poppins', 1964)
-  .withRuntime(139) // minutes
-  .withRealityRelation('pure_fiction', 1.0)
-  .withCopyright(['Walt Disney Productions'], 1964, 'active')
-  .withCulturalSignificance(0.98)
-  .addRuntimeKeyframe(87, 15, 'umbrella_descent', 0.95, ['iconic', 'magical'])
-  .build();
-```
+**Dependency surgery.** Hundreds of nested git-in-git-in-git npm packages,
+untangled. Then taught a junior to do it in weeks, and she is still surprised
+about it years later.
 
-```typescript
-const universe = new UniverseBuilder()
-  .historicalEvent('jfk_assassination', 1963)
-  .withDateRange(1963, 11, 22, 1963, 11, 22, TimePrecision.SECOND)
-  .withRealityRelation('documentary', 0.0)
-  .withPublicDomain(['Warren Commission Report'])
-  .addDateKeyframe(1963, 11, 22, 12, 30, 0, 'first_shot', 1.0, ['assassination'])
-  .build();
-```
+**Language migration with an afterlife.** Rewrote a lending platform's backend
+from Java to Node. Developers were still reading that codebase three to five
+years later — which is the only code review that counts.
 
-```typescript
-import { LocalTime } from '@local-time/temporal-system';
+**Onboarding as engineering.** Took a team from about nine regular members to
+twenty-one. Ramp-up is a system, not a vibe.
 
-const localTime = new LocalTime();
-await localTime.initialize();
+**Concurrent delivery inside a rigid process.** Six-week sprints with a new one
+starting every four, several in flight, releasing into secure environments.
+Overlap, not sequence. Continuous delivery with a waterfall wrapper, in 2012.
 
-const windowSearch = localTime.getWindowSearch();
-const universes = await windowSearch.findUniversesInWindow('cal:1964');
+**Financial semantics.** GAAP → XBRL → IFRS taxonomy mappings, as an
+undergraduate. A mapping error is not a bug, it is a misstatement.
 
-const registry = localTime.getRegistry();
-const maryPoppins = registry.getUniverse('disney:mary_poppins:1964');
-```
+---
 
-</details>
+## Values
 
-- (mcp)
-- `Project, Art?`
-- (personal api)
+**User ease is a correctness property.** NSGEM's stated end goal was to
+"increase data credibility" and to be "easy to use"
+([navy.mil](https://www.navy.mil/Press-Office/News-Stories/display-news/Article/2265327/from-the-shore-navy-installations-take-energy-initiatives-to-the-next-level/)).
+The Energy Biggest Loser competition was scored on it, and a culinary
+specialist was turning off monitors because the tool made the stakes legible to
+him. If the person doing the work will not use it, the number does not matter.
 
-## Work James tricked himself into doing
+**Correctness means the ledger closes.** I spent six hours walking an engineer
+through commission-split tests, because thirds of a cent do not divide and
+someone has to own the remainder. Today I write harnesses where reverting only
+the bound arithmetic makes six of thirteen checks fail on purpose.
 
-- Converting his homelab onto low-voltage hardware to maximise utilisation of local solar
-  production.
-- Created reverse proxies for his applications to minimise puncturing the home firewall and to
-  centralise TLS management.
-- The homelab supports multiple federated React apps backed by a shared Node.js API.
+**Client joy.** Adoption is the deliverable. I have watched a tool with all the
+right features sit at 23% and a humbler one reach 90% because someone did the
+change management. I build for the second number.
 
-<details>
+**Environmental sustainability.** 62,000 billing statements mapped to
+facility-level usage across every Navy installation, in multiple time zones,
+feeding a competition that reduced actual kilowatt-hours. Today: 1,188 days of
+solar production against weather, with snow separated from soiling, published
+alongside what was excluded and what still narrows the population.
 
-  - My car uses those APIs to write a diagnostic report for me
+---
 
-      <img width="553" height="1057" alt="image" src="https://github.com/user-attachments/assets/a9dd2121-141c-44ad-b030-804ade7a95f4" />
+## Where it has been tested
 
-  - While exploring CQRS patterns, I load-tested the system by live-rendering random Markdown
-    content from my webhook security-updates table, achieving 300–1k req/s.
+**2012 — NSGEM, U.S. Navy (CNIC, worldwide installations).** Created by
+Sandrine Schultz, energy program manager at Commander, Navy Installations
+Command — the project I'm proudest of. Comprising over 62,000
+facility billing statements to 30+ utility-level usage across multiple time zones, and
+shipped the Data Quality Score that told the reader how much of each number to
+believe. The Energy Biggest Loser competition was scored on it; the program won
+the International Special Achievement Award, and the Navy credited CNIC for
+standing out among more than 100,000 organizations.
 
-      <img width="1705" height="628" alt="image" src="https://github.com/user-attachments/assets/66cff645-a456-49dc-bee5-6b6921c61992" />
+**2014–2015 — `agrig8.in`**
+Genomic sorting applied to warehouse pick routing: inspired in college by a
+traveling salesman weighted by product density. Abandoned on purpose, because
+I realized did not know enough discrete math to do it honestly. That reason is the artifact.
 
-</details>
+**2014–2016 — Geometri (acquired by Acuity Brands).** Built the prototype servers. The lead wanted data in RAM because it beat DynamoDB on reads. It did.
+It also removed durability, which was the only axis that mattered.
 
-- I use the lab to explore things like:
-  - A personal GitHub application posting webhook security updates that I convert into test content
-    for my Markdown exploration.
-  - `Project, Art?` started as an exploration in rendering MDX into JSX securely using nonce or sha
-    CSPs.
-  - A personal MCP server connected directly to `Project, Art?` via a simple S-expression pattern.
-    - LLMs speak Markdown, so this lets me repeatably create prompts and artifacts.
-    - The native MDX support means custom web components can be used by the LLM.
-    - Custom web components, in my understanding, are the next natural evolution of model response.
-    - Advanced RAG indexing is currently planned for future research and implementation.
-  - Custom application protocols and advanced data management via service workers.
-  - OAuth 2.0 Dynamic Client Registration (RFC 7591) to support QR-code-addressed view adoption,
-    with privacy in mind.
-  - Combining HTTP 402 with HTTP 418 to build an intra-microservice payment middleware themed
-    around cups of tea as units of measure.
+**2016–2017 — Apto.** Source-driven deployment for a Salesforce managed
+package, 2016. Also the year I learned that a commission engine can be
+arithmetically perfect and still be wrong, because the hard part is not
+computing the residue — it is assigning it.
 
-## Things James has done
+**2017 — Flowhub.** Proposed the fix for purchase-limit looping before the
+Sweet Leaf raid: hash the license details, verify the limit against a public
+ledger. Enforcement without identification. Sweet Leaf lost 26 licenses and
+three owners went to prison; their implicit defense was not that they did not know where
+the flower went, it was that no-one from METRC had told them they were liable for treating sales like alcohol purchasing
+looking. Also consolidated about a dozen production databases into one and
+began the move off managed hosting onto Kubernetes.
 
-- Designed and led multiple technical code migrations with zero unscheduled hours of developer
-  downtime.
-- Stabilised core website delivery pipelines for multiple Fortune 500 companies.
-  - I've battled Googlebot and Kubernetes — both winning and losing.
-  - Un-recursed 1.3m npm modules while maintaining production shipping ability.
-  - The generalised statement: 7 minutes to build, lint, and test; 7 minutes to ship.
-    - It's not always possible, but the intention adds up to hundreds of saved developer hours.
-- Supported active design-system implementation and automation.
-  - Created scripts that calculated whether downstream repos were falling out of design compliance
-    (mandated by accessibility legal requirements).
-- Inherited eleven MongoDB instances and developed a solution to collapse them into a single
-  database/API.
-  - The system used the oplog for its Meteor.js integration; the number of active clients had led
-    them to scale horizontally first.
-- Successfully converted a traditional Salesforce copy-paste deployment cycle into a fast-paced
-  GitOps pipeline that enabled a stronger developer experience.
-  - This let the business focus on a mobile experience quickly while enabling custom-services income
-    at the same time.
-  - My work was directly compared to the best practices Salesforce advocated at the time —
-    specifically, that my approach was much smoother (this was before Salesforce bought Heroku).
-  - The company's Denver presence grew from three developers to over eighty team members across all
-    areas of the business during my tenure as the second developer the founder hired full-time.
-- Worked on a data-intensive dashboard supporting 60k individual building-energy reports to track
-  progress against a Congressional mandate.
-  - Data source ingested energy bills for the US Navy across 12+ timezones.
-  - Data aggregated via ETL down to monthly usage for every individual building.
-  - Data summarised from the individual building into a regional → global command view pane.
+**2016–2019 — infrastructure.** DesignOps by 2019; the chat-native deploy and
+incident habits earlier than the vocabulary for them. Watched an etcd cluster
+lose quorum to an expired certificate, where the monitoring lived inside the
+thing it monitored and could not report its own death.  a rebuild
+nobody had documented because the builder quit same-day — twelve hundred to
+two thousand prototype deploys, brought back one at a time, while pre-scheduled
+user testing slipped and 8 a.m. emergency calls with vendors like Rancher
+became routine. The cost of undocumented systems is measured in the wages of
+the people rebuilding them: repairs, delays, and the lost window, at a FortuneX
+— an approximate seven to eleven million.
 
-## Things James hasn't finished yet
+**2025–now — the lab.** Six Go services sharing one trust protocol: advertise
+over mDNS, verify capability before granting a rung, refuse to display a peer
+you cannot attest.
 
-- Automatic service healing with zero involvement via System swarm management configured by Magnet
-  URL.
-- Writing a Linux daemon to support an offsite backup service for critical application data.
-- Distributed Hash Table ordinal/lexical search support.
-- Exporting live data from the solar panels.
-- Providing an auth token during the dynamic creation of an install script (daemon → otel
-  tracking).
+---
+
+## The rest of it
+
+Not a portfolio. **Seeds** — bodies of knowledge with a stated audience, a
+stated assumption, and one entrance. Take the door you came for.
+
+- **[le.gume-energy](https://james-gibson.github.io/le.gume-energy/)** — solar
+  production against weather, residuals separating snow from soiling.
+- **[local-time](https://github.com/james-gibson/local-time)** — Cretaceous to
+  now, in nanoseconds, two clocks per record, because local time lies once a
+  year and does it quietly.
+- **[lab-safety](https://github.com/james-gibson/lab-safety)** — safety data
+  sheets for agent-facing surfaces; a priced call that cannot go unbilled.
+- **[smoke-alarm](https://github.com/james-gibson/smoke-alarm)** — monitoring
+  that lives outside the thing it watches.
+- **[lezz.go](https://github.com/james-gibson/lezz.go)** — "42 is a coordinate,
+  not a credential; trust is what you pinned."
+- **[that-train-dashboard](https://github.com/james-gibson/that-train-dashboard)** —
+  a child that cannot silently inherit its parent's rules.
+- **[freematics-prototype](https://github.com/james-gibson/freematics-prototype)** —
+  my car writes blog posts. Trusting the narrator is the hard part.
+- **Old and load-bearing:**
+  [lightning-bower-example](https://github.com/james-gibson/lightning-bower-example) ·
+  [forceTooling](https://github.com/james-gibson/forceTooling) ·
+  [resumeAPI](https://github.com/james-gibson/resumeAPI) ·
+  [agrig8](https://github.com/james-gibson/agrig8)
