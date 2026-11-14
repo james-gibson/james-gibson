@@ -33,6 +33,17 @@ announced the same idea as its own product that August.
 untangled. Then taught a junior to do it in weeks, and she is still surprised
 about it years later.
 
+**Federated GraphQL cluster design.** A federated graph is a set of contracts
+pretending to be a schema. I design the seams: each service owns a subgraph and
+declares what it claims — resolvers, routes, streams, RPC methods, crons,
+transports — and what it presupposes, addressed so drift in the presupposed
+surface breaks the build instead of the customer. The port is part of a
+deployment's identity, not a deployment detail. I built this shape for a
+multi-app NestJS cluster — main, admin, and auth apps mounting subsets of one
+GraphQL surface over a shared Prisma schema, with a token guard that answers 423
+rather than a plausible empty result — and I have watched what happens when the
+seam is left to convention. See *the lint rule*, below.
+
 **Language migration with an afterlife.** Rewrote a lending platform's backend
 from Java to Node. Developers were still reading that codebase three to five
 years later — which is the only code review that counts.
@@ -124,6 +135,71 @@ you cannot attest.
 
 ---
 
+## The lint rule
+
+A concession on one lint rule — a style preference granted to one team because
+it was cheaper than the argument — became the boundary case that split a
+division.
+
+The rule was never about the rule. A shared lint config is the cheapest
+federalism test a company ever runs: one file, every team's code, no product
+surface to hide behind. If it cannot survive one concession, the schema will not
+survive one either. The split did not happen because of a semicolon; it happened
+because nobody could say where the rule stopped being style and started being a
+contract, so the next argument was about who owned the seam.
+
+Two teams left with two conventions, then two roadmaps, then two org charts. A
+VP told a room of engineers it was fine, because I was going to fix it. By the
+end of that week I had handed in my notice. I was not going to be the person who
+absorbed the cost of an undecided boundary and called it a fix.
+
+The shares I was granted were worth about a fifteenth of their grant-date value
+by the time I stopped checking; the honest number, once options and the
+preference stack were counted, was closer to a fiftieth. The market did not
+punish a lint rule. It priced a company that could not decide who owned a seam.
+
+---
+
+## The last five years
+
+Most of what I know about systems at scale I learned by trying to make one
+generator honest. The working notes are public:
+[lemon-x-files](https://github.com/gibsunas/lemon-x-files) is the
+multi-transport generator corpus,
+[lemon-extract](https://github.com/gibsunas/lemon-extract) is the cross-repo
+introspection that came out of it. Neither is a portfolio piece; both are the
+record of what broke.
+
+- **A transport is a dimension, not a rewrite.** One surface spec, seven
+  transports — REST, GraphQL, SSE, JSON-RPC, UDP, Socket.IO, OTLP — each emitted
+  as a module. A generator that only writes a demo feature is hollow, and hollow
+  is a state you can see.
+- **Decomposition ends when every surface has exactly one owner.** A controller
+  mounted on two apps with no routes is not a REST surface; a
+  registered-but-inert service is not a service. Writing them down as out of
+  scope is what makes the decomposition complete.
+- **Identity is an address, not a name.** Specs presuppose each other by pinned
+  address, so a rename is free and drift is loud.
+- **A port is part of the identity.** The same note surface mounted on 3001 and
+  3002 is a straddle. Treating the port as a family value makes it two frames of
+  one signature instead of a fork.
+- **Composition order is load-bearing.** The introspection plugins bootstrap
+  sequentially because the init step creates the project list every later plugin
+  reads. Concurrency there is a silent data-loss bug, not a speedup.
+- **Read-only is the default, including when you cannot tell.** An unknown
+  credential is a read-only credential. A stale ambient `GITHUB_TOKEN` turns a
+  valid request into a 401 that reads like "not found," so the tool reads exactly
+  one variable and never the ambient one.
+- **The MCP surface is the security boundary.** Three read-only tools, no shell,
+  no arbitrary path reader; scan, npm, and git are withheld because they mutate
+  or execute. A smaller tool list is the entitlement.
+- **Snapshot the schema like a lockfile.** A GraphQL schema, a
+  `package-lock.json`, and a `yarn.lock` are all strings that describe what a
+  deploy believed. Store them as extracts against a commit, and "what changed?"
+  stops being an archaeology project.
+
+---
+
 ## The rest of it
 
 Not a portfolio. **Seeds** — bodies of knowledge with a stated audience, a
@@ -144,6 +220,10 @@ stated assumption, and one entrance. Take the door you came for.
   a child that cannot silently inherit its parent's rules.
 - **[freematics-prototype](https://github.com/james-gibson/freematics-prototype)** —
   my car writes blog posts. Trusting the narrator is the hard part.
+- **[lemon-x-files](https://github.com/gibsunas/lemon-x-files)** — one surface
+  spec, seven transports, every gap written down.
+- **[lemon-extract](https://github.com/gibsunas/lemon-extract)** — projects,
+  commits, scans, and deployments across repos; a read-only MCP surface on top.
 - **Old and load-bearing:**
   [lightning-bower-example](https://github.com/james-gibson/lightning-bower-example) ·
   [forceTooling](https://github.com/james-gibson/forceTooling) ·
