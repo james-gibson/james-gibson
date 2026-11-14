@@ -225,7 +225,8 @@ stated assumption, and one entrance. Take the door you came for.
 - **[lemon-extract](https://github.com/gibsunas/lemon-extract)** — projects,
   commits, scans, and deployments across repos; a read-only MCP surface on top.
 - **Old and load-bearing:**
-  [lightning-bower-example](https://github.com/james-gibson/lightning-bower-example) ·
-  [forceTooling](https://github.com/james-gibson/forceTooling) ·
-  [resumeAPI](https://github.com/james-gibson/resumeAPI) ·
-  [agrig8](https://github.com/james-gibson/agrig8)
+  · [lightning-bower-example](https://github.com/james-gibson/lightning-bower-example)
+  · [forceTooling](https://github.com/james-gibson/forceTooling)
+  · [resumeAPI](https://github.com/james-gibson/resumeAPI)
+  · [agrig8](https://github.com/james-gibson/agrig8)
+  · [First OSS Contribution](https://forum.alphasoftware.com/forum/other-forums/code-archive/52839-how-to-map-multiple-addresses-in-google-maps) stayed relevant for [years](https://www.youtube.com/watch?v=2WnpMWYuLSE)
