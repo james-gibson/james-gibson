@@ -135,11 +135,11 @@ you cannot attest.
 
 ---
 
-## The lint rule
+## 2019–2021 — The lint rule
 
-A concession on one lint rule — a style preference granted to one team because
-it was cheaper than the argument — became the boundary case that split a
-division.
+At a company I joined in October 2019, a concession on one lint rule — a style
+preference granted to one team because it was cheaper than the argument — became
+the boundary case that split a division.
 
 The rule was never about the rule. A shared lint config is the cheapest
 federalism test a company ever runs: one file, every team's code, no product
@@ -149,14 +149,14 @@ because nobody could say where the rule stopped being style and started being a
 contract, so the next argument was about who owned the seam.
 
 Two teams left with two conventions, then two roadmaps, then two org charts. A
-VP told a room of engineers it was fine, because I was going to fix it. By the
-end of that week I had handed in my notice. I was not going to be the person who
-absorbed the cost of an undecided boundary and called it a fix.
+VP told a room of engineers it was fine, because I was going to fix it. I handed
+in my notice that week and was gone by June 2021. I was not going to be the
+person who absorbed the cost of an undecided boundary and called it a fix.
 
-The shares I was granted were worth about a fifteenth of their grant-date value
-by the time I stopped checking; the honest number, once options and the
-preference stack were counted, was closer to a fiftieth. The market did not
-punish a lint rule. It priced a company that could not decide who owned a seam.
+I was granted at $33 on 14 October 2019. The last time I looked, the share price
+was $2 — a sixteenth of the grant. Marked honestly, with the option stack
+counted, it was closer to a fiftieth. The market did not punish a lint rule. It
+priced a company that could not decide who owned a seam.
 
 ---
 
