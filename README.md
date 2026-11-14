@@ -171,9 +171,9 @@ introspection that came out of it. Neither is a portfolio piece; both are the
 record of what broke.
 
 - **A transport is a dimension, not a rewrite.** One surface spec, seven
-  transports — REST, GraphQL, SSE, JSON-RPC, UDP, Socket.IO, OTLP — each emitted
-  as a module. A generator that only writes a demo feature is hollow, and hollow
-  is a state you can see.
+  transports — REST, GraphQL, SSE, JSON-RPC, UDP, Socket.IO, OTLP — declared as
+  modules in the same surface rather than forks. A generator that only writes a
+  demo feature is hollow, and hollow is a state you can see.
 - **Decomposition ends when every surface has exactly one owner.** A controller
   mounted on two apps with no routes is not a REST surface; a
   registered-but-inert service is not a service. Writing them down as out of
